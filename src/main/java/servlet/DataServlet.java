@@ -1,18 +1,50 @@
 package servlet;
 
+
 import DAOs.DataDAO;
+import DAOs.Users;
 import Services.PersistenceService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
+
+
 
 public class DataServlet extends HttpServlet {
+    static int counter = 1000;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        InputStream is = req.getInputStream();
+
+        //System.out.println("testing: " + is.toString());
+
+        DataDAO dao = mapper.readValue(req.getInputStream(), DataDAO.class);
+        System.out.println("dao: " + dao.getString() + ", " + dao.getInteger() + ", " + dao.isBool());
+
+        //input JSON is as follows { "Name":"test", "Password":"123", "Email":"Email@Email.com"}
+        Users u  = new Users(counter++, dao.getString(), dao.getString(), dao.getString());
+        //CustomArrayList<Integer> ar = new CustomArrayList<Integer>();
+        //MyJDBC jd = new MyJDBC();
+        
+
+
+
+        /*
         //send POST with body containing string, integer and bool
+
+        System.out.println("Query: "+ req.getQueryString());
+        System.out.println(req.getRequestURL());
+        System.out.println(req.getContextPath());
+        System.out.println(
+                "String:  [" + req.getParameter("string") + "], " +
+                "Integer: [" + req.getParameter("integer") + "], " +
+                        "bool: [" + req.getParameter("bool") + "]");
         String s = req.getParameter("string");
         Integer i = Integer.parseInt(req.getParameter("integer"));
         boolean b = Boolean.parseBoolean(req.getParameter("bool"));
@@ -23,6 +55,8 @@ public class DataServlet extends HttpServlet {
 
         resp.setStatus(202);
         resp.getWriter().print("Data accepted.");
+        */
+
     }
 
     @Override

@@ -14,5 +14,6 @@ This will take a simple GET request and respond with "Pong!" and status 202, ind
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setStatus(202);
         resp.getWriter().print("Pong!");
+        System.out.println("executing doGet of PingServlet");
     }
 }
