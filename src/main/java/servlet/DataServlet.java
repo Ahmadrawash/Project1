@@ -1,6 +1,5 @@
 package servlet;
 
-
 import DAOs.DataDAO;
 import DAOs.Users;
 import Services.PersistenceService;
@@ -30,7 +29,21 @@ public class DataServlet extends HttpServlet {
         //input JSON is as follows { "Name":"test", "Password":"123", "Email":"Email@Email.com"}
         Users u  = new Users(counter++, dao.getString(), dao.getString(), dao.getString());
         //CustomArrayList<Integer> ar = new CustomArrayList<Integer>();
-        //MyJDBC jd = new MyJDBC();
+        try
+        {
+            MyJDBC.DisplayData();
+            MyJDBC.AddUser( "IntegratedTest", "11111", "IntegratedTest@revature.net");
+            MyJDBC.Getuser(1);
+            MyJDBC.Getuser(2);
+            MyJDBC.DeleteUser(7);
+            MyJDBC.UpdateUser(1, "NewName", "NewPassword123", "newEmail");
+        }
+        catch (Exception exc)
+        {
+            System.out.println("Exception: " + exc.getMessage());
+            exc.printStackTrace();
+        }
+
         
 
 
