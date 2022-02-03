@@ -1,7 +1,7 @@
 package servlet;
 
 import DAOs.DataDAO;
-import DAOs.Users;
+import DAOs.UsersDAO;
 import Services.PersistenceService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-
 
 
 public class DataServlet extends HttpServlet {
@@ -27,26 +26,13 @@ public class DataServlet extends HttpServlet {
         System.out.println("dao: " + dao.getString() + ", " + dao.getInteger() + ", " + dao.isBool());
 
         //input JSON is as follows { "Name":"test", "Password":"123", "Email":"Email@Email.com"}
-        Users u  = new Users(counter++, dao.getString(), dao.getString(), dao.getString());
+        UsersDAO u  = new UsersDAO(counter++, dao.getString(), dao.getString(), dao.getString());
         //CustomArrayList<Integer> ar = new CustomArrayList<Integer>();
-        try
-        {
-            MyJDBC.DisplayData();
-            MyJDBC.AddUser( "IntegratedTest", "11111", "IntegratedTest@revature.net");
-            MyJDBC.Getuser(1);
-            MyJDBC.Getuser(2);
-            MyJDBC.DeleteUser(7);
-            MyJDBC.UpdateUser(1, "NewName", "NewPassword123", "newEmail");
-        }
-        catch (Exception exc)
-        {
-            System.out.println("Exception: " + exc.getMessage());
-            exc.printStackTrace();
-        }
 
-        
+        //MYORM.Adduser();
+        //MyJDBC.AddUser( "random user", "99999", "random Users@revature.net");
 
-
+        //System.out.println("\"random user\" has been added");
 
         /*
         //send POST with body containing string, integer and bool

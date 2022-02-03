@@ -37,7 +37,19 @@
             <artifactId>jackson-core</artifactId>
             <version>2.12.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
+
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>JDBC</artifactId>
+            <version>1.0</version>
+        </dependency>
 
     </dependencies>
     

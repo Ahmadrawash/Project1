@@ -1,6 +1,6 @@
 package DAOs;
 
-public class Users {
+public class UsersDAO {
     private int ID;
     private String Name;
     private String Password;
@@ -38,12 +38,12 @@ public class Users {
         Email = email;
     }
 
-    public Users()
+    public UsersDAO()
     {
 
     }
 
-    public Users(int id, String Name, String Password, String Email)
+    public UsersDAO(int id, String Name, String Password, String Email)
     {
         this.setID(id);
         this.setName(Name);
