@@ -1,8 +1,25 @@
-package Services;
+package Services;//package Services;
 
-import DAOs.DataDAO;
+import DAOs.UsersDAO;
 
 public class PersistenceService {
+
+    private static UsersDAO data;
+
+
+    static {
+        data = new UsersDAO();
+    }
+
+    public static UsersDAO getData() {
+        return data;
+    }
+
+    public static void setData(UsersDAO d) {
+        data = d;
+    }
+
+    /*
     private static DataDAO data;
 
     static {
@@ -17,8 +34,6 @@ public class PersistenceService {
         data = d;
     }
 
-
-    //************ added my code
-
+*/
 
 }

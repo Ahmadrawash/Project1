@@ -1,4 +1,4 @@
-package servlet;
+//package servlet;//package servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +12,11 @@ This will take a simple GET request and respond with "Pong!" and status 202, ind
  */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("done");
         resp.setStatus(202);
-        resp.getWriter().print("Pong!");
-        System.out.println("executing doGet of PingServlet");
+        resp.getWriter().print("Pong: Got response!");
+        System.out.println("executing doGet of servlet.PingServlet");
+
+
     }
 }

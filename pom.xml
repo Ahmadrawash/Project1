@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>kplummer</groupId>
-    <artifactId>simple-servlets</artifactId>
+    <groupId>Ahmad</groupId>
+    <artifactId>ServletProject</artifactId>
     <packaging>war</packaging>
     <version>0.3</version>
     <name>Simple Servlets</name>
@@ -45,10 +45,45 @@
         </dependency>
 
 
+
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>JDBC</artifactId>
             <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>2.7.3</version>
+        </dependency>
+        <!-- <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>JDBC2</artifactId>
+            <version>1.0</version>
+        </dependency>
+      -->
+
+        <!-- file logger dependency -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>file-logger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+        <!-- brian jar -->
+        <!-- <dependency>
+            <groupId>com.revature</groupId>
+            <artifactId>Project1_ORM_GitWorthy</artifactId>
+            <version>0.3</version>
+        </dependency>
+          -->
+
+        <dependency>
+            <groupId>com.revature</groupId>
+            <artifactId>Project1_ORM_GitWorthy</artifactId>
+            <version>0.4</version>
         </dependency>
 
     </dependencies>

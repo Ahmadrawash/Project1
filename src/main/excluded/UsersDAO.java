@@ -1,4 +1,4 @@
-package DAOs;//package DAOs;
+//package DAOs;//package DAOs;
 
 import Annotations.*;
 
@@ -6,7 +6,7 @@ import Annotations.*;
 public class UsersDAO {
     @PrimaryKey(autoIncrement = true)
     @Property(fieldName = "id")
-    private Integer ID = 9;
+    private int ID;
     @Property(fieldName = "name")
     private String Name;
     @Property(fieldName = "password")
@@ -15,12 +15,12 @@ public class UsersDAO {
     private String Email;
 
     @Getter(fieldName = "id")
-    public Integer getID() {
+    public int getID() {
         return ID;
     }
 
     @Setter(fieldName = "id")
-    public void setID(Integer ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -76,4 +76,3 @@ public class UsersDAO {
 
 
 }
-

@@ -6,20 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form method="GET" action="http://localhost:8080/ServeltProject/ping" >
+<!--
+    <form method="GET" action="ServeltProject" >
         <label for="test">MyTest:</label>
         <input id="test" name="test" type="text">
         <label for="thingy">Thingy:</label>
         <input id="thingy" name="thingy" type="text">
         <input type="submit" value="MyTest">
     </form>
-    <form method="GET" action="http://localhost:8080/ServeltProject/ping" >
+    -->
+    <form method="POST" action="http://localhost:8080/ServeltProject/things" >
         <label for="test">MyTest:</label>
         <input id="test" name="test" type="text">
         <label for="thingy">Thingy:</label>
         <input id="thingy" name="thingy" type="text">
         <input type="submit" value="MyTest">
     </form>
-
+<form method="GET" action="http://localhost:8080/ServeltProject/things" >
+    <label for="test">MyTest:</label>
+    <input id="test2" name="test" type="text">
+    <label for="thingy">Thingy:</label>
+    <input id="thingy2" name="thingy" type="text">
+    <input type="submit" value="MyTest">
+</form>
 </body>
 </html>

@@ -42,15 +42,7 @@
         <servlet-name>pingServlet</servlet-name>
         <url-pattern>/ping</url-pattern>
     </servlet-mapping>
-    <!--<servlet>
-        <servlet-name>pingServlet2</servlet-name>
-        <servlet-class>PingServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>pingServlet2</servlet-name>
-        <url-pattern>/ping/*</url-pattern>
-    </servlet-mapping>
-     -->
+
     <servlet>
         <servlet-name>dataServlet</servlet-name>
         <servlet-class>DataServlet</servlet-class>
@@ -80,7 +72,7 @@
 
     <servlet>
         <servlet-name>thingServlet</servlet-name>
-        <servlet-class>ThingsServlet</servlet-class>
+        <servlet-class>ThingServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>thingServlet</servlet-name>

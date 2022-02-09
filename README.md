@@ -75,20 +75,20 @@ This must be listed in the `web.xml` file with the `<listener>` tag.
 This project's listener is described:
 ```xml
 <listener>
-    <listener-class>servlets.DependencyLoaderListener</listener-class>
+    <listener-class>servlets.Services.DependencyLoaderListener</listener-class>
 </listener>
 ```
 
 The listener itself implements `javax.servlet.ServletContextListener` and must 
 override `contextInitialized` and `contextDestroyed`.
-So create a class in the servlets package named `DependencyLoaderListener`, then paste this code into the file:
+So create a class in the servlets package named `Services.DependencyLoaderListener`, then paste this code into the file:
 ```java
 package servlets;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-public class DependencyLoaderListener implements ServletContextListener {
+public class Services.DependencyLoaderListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
 
@@ -108,7 +108,7 @@ Each servlet must be described with a name and class. ex:
 ```xml
     <servlet>
         <servlet-name>pingServlet</servlet-name>
-        <servlet-class>servlets.PingServlet</servlet-class>
+        <servlet-class>servlets.servlet.PingServlet</servlet-class>
     </servlet>
 ```
 
@@ -116,17 +116,17 @@ Each servlet must be described with a name and class. ex:
 And each servlet must map a URL to the name. The url-pattern will be what follows 
 the context path. ex: `http://localhost:8080/CONTEXTPATH/URL-PATTERN...`
 In the following example the /ping url-pattern maps to the pingServlet, which above 
-points to the PingServlet class. 
+points to the servlet.PingServlet class. 
 ```xml
     <servlet-mapping>
         <servlet-name>pingServlet</servlet-name>
         <url-pattern>/ping</url-pattern>
     </servlet-mapping>
 ```
-HTTP requests sent to this URL will be handled by the "do" methods in PingServlet.  
+HTTP requests sent to this URL will be handled by the "do" methods in servlet.PingServlet.  
 
 ## Servlet Class
-We need a class for our ping servlet. The servlet class will extend `HttpServlet` and override the HTTP methods we want the servlet to handle. For now that just means the `doGet()` method. Create a class in the servlets package named `PingServlet` and use the following code:
+We need a class for our ping servlet. The servlet class will extend `HttpServlet` and override the HTTP methods we want the servlet to handle. For now that just means the `doGet()` method. Create a class in the servlets package named `servlet.PingServlet` and use the following code:
 
 ```java
    
@@ -138,7 +138,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class PingServlet extends HttpServlet {
+public class servlet.PingServlet extends HttpServlet {
 /*
 This will take a simple GET request and respond with "Pong!" and status 202, indicating the request was accepted.
  */
